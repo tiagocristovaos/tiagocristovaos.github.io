@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}</style>
+<title>Tiago Cristovão da Silva · Controladoria & FP&A</title>
+<meta name="description" content="Portfólio profissional de Tiago Cristovão da Silva — Controladoria, FP&A, Business Intelligence, DRE, DFC, análise financeira e indicadores gerenciais.">
+<!-- Prévia do link no LinkedIn/WhatsApp. Se o usuário do GitHub mudar, atualize og:url e og:image. -->
+<meta property="og:url" content="https://tiagocristovaos.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tiago Cristovão da Silva · Controladoria, FP&A & Dados">
+<meta property="og:description" content="Portfólio com cases interativos de DRE gerencial, contas a pagar, torre de controle e formação de preço.">
+<meta property="og:image" content="https://tiagocristovaos.github.io/foto.jpg">
+<meta property="og:image:width" content="400">
+<meta property="og:image:height" content="400">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* ============ TOKENS (claro / escuro) ============ */
+:root{
+  --bg:#F2F4F0; --surface:#FBFCFA; --surface-2:#E8ECE6;
+  --ink:#14201C; --ink-2:#34423C; --muted:#5A6962; --rule:#D1D9D2;
+  --accent:#00846F; --accent-ink:#006453; --accent-soft:#D6EBE4;
+  --s2:#8A5CC2; --s3:#C07A1A;
+  --good:#1E7A3C; --good-soft:#DCEFE1; --bad:#B42318; --bad-soft:#F8E1DD; --warn:#9A5B00; --warn-soft:#F6E9D2;
+  --grid:rgba(20,32,28,.08);
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  --radius:6px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0E1412; --surface:#151D1A; --surface-2:#1C2622;
+    --ink:#E4EBE6; --ink-2:#C3CEC8; --muted:#93A39B; --rule:#27332E;
+    --accent:#2FA891; --accent-ink:#5CC7B2; --accent-soft:#16322B;
+    --s2:#9F7AD6; --s3:#B87C2A;
+    --good:#5BBF7A; --good-soft:#15301F; --bad:#F0705F; --bad-soft:#3A1A16; --warn:#E0A24A; --warn-soft:#33260F;
+    --grid:rgba(228,235,230,.08);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0E1412; --surface:#151D1A; --surface-2:#1C2622;
+  --ink:#E4EBE6; --ink-2:#C3CEC8; --muted:#93A39B; --rule:#27332E;
+  --accent:#2FA891; --accent-ink:#5CC7B2; --accent-soft:#16322B;
+  --s2:#9F7AD6; --s3:#B87C2A;
+  --good:#5BBF7A; --good-soft:#15301F; --bad:#F0705F; --bad-soft:#3A1A16; --warn:#E0A24A; --warn-soft:#33260F;
+  --grid:rgba(228,235,230,.08);
+}
+
+/* ============ BASE ============ */
+*{box-sizing:border-box}
+html{scroll-padding-top:64px}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--accent-ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+button:focus-visible,.btn:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ============ TOPO ============ */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{font-family:var(--display);font-weight:700;font-stretch:112%;letter-spacing:.01em;font-size:17px;text-decoration:none;color:var(--ink)}
+.brand span{color:var(--muted);font-weight:500}
+.top nav{display:flex;gap:4px;flex-wrap:wrap}
+.top nav a{font-size:14px;color:var(--ink-2);text-decoration:none;padding:6px 10px;border-radius:4px}
+.top nav a:hover{background:var(--surface-2)}
+@media (max-width:760px){.top nav{display:none}}
+.top-right{display:flex;align-items:center;gap:8px}
+.theme-btn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink);cursor:pointer;padding:0}
+.theme-btn:hover{background:var(--surface-2)}
+.theme-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.theme-btn .i-sun{display:none}
+:root[data-theme="dark"] .theme-btn .i-sun{display:block}
+:root[data-theme="dark"] .theme-btn .i-moon{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .theme-btn .i-sun{display:block}:root:not([data-theme="light"]) .theme-btn .i-moon{display:none}}
+@media (max-width:420px){.brand{font-size:15px}}
+@media (max-width:1000px){.brand span{display:none}}
+
+/* ============ HERO ============ */
+.hero{padding-block:clamp(28px,5vw,64px) clamp(24px,3.5vw,40px);display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(32px,5vw,64px);align-items:end}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
+h1{font-family:var(--display);font-weight:800;font-stretch:78%;font-size:clamp(36px,5.4vw,70px);line-height:.96;letter-spacing:-.01em;margin:12px 0 18px;text-wrap:balance}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:clamp(16px,1.45vw,18px);color:var(--ink-2);max-width:60ch;margin:0 0 22px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px var(--body);padding:11px 18px;border-radius:var(--radius);text-decoration:none;border:1px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translateY(-1px)}
+
+/* ficha estilo razão contábil */
+.ledger{background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);font-size:14.5px}
+.ledger header{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:2px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.ledger dl{margin:0}
+.who{display:flex;align-items:center;gap:14px;padding:14px 16px;border-bottom:1px solid var(--rule)}
+.who img{width:76px;height:76px;border-radius:50%;object-fit:cover;object-position:center;border:2px solid var(--surface);box-shadow:0 0 0 1px var(--rule);flex:none}
+.who b{display:block;font-family:var(--display);font-stretch:95%;font-size:19px;line-height:1.15}
+.who small{color:var(--muted);font-size:13.5px}
+@media (max-width:900px){.ledger .row{padding-block:8px}.who img{width:56px;height:56px}}
+.ledger .row{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:11px 16px;border-bottom:1px solid var(--rule)}
+.ledger .row:last-child{border-bottom:0}
+.ledger dt{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:2px}
+.ledger dd{margin:0}
+.ledger dd b{display:block;font-weight:600}
+.ledger dd small{color:var(--muted);font-size:13.5px}
+
+/* totalizadores (faixa discreta, estilo rodapé de relatório) */
+.totals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);margin:0 0 clamp(8px,2vw,16px)}
+.totals div{padding:14px 16px;border-right:1px solid var(--rule);min-width:0;display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:6px}
+.totals div:last-child{border-right:0}
+.totals b{display:block;font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:500;font-size:clamp(16px,1.6vw,19px);line-height:1.3}
+.totals span{display:block;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:760px){.totals{grid-template-columns:repeat(2,minmax(0,1fr))}.totals div:nth-child(2){border-right:0}.totals div:nth-child(-n+2){border-bottom:1px solid var(--rule)}}
+@media (max-width:600px){.totals{display:none}} /* no celular a ficha já traz esses dados */
+
+/* ============ SEÇÕES ============ */
+section{padding-block:clamp(36px,6vw,80px)}
+.sec-head{display:grid;grid-template-columns:90px 1fr;gap:16px;align-items:baseline;border-top:2px solid var(--ink);padding-top:14px;margin-bottom:36px}
+@media (max-width:640px){.sec-head{grid-template-columns:1fr;gap:4px}}
+.code{font-family:var(--mono);font-size:13px;color:var(--muted)}
+h2{font-family:var(--display);font-weight:750;font-stretch:88%;font-size:clamp(30px,4vw,46px);line-height:1.02;margin:0;text-wrap:balance}
+.sec-head p{grid-column:2;margin:10px 0 0;color:var(--ink-2);max-width:62ch}
+@media (max-width:640px){.sec-head p{grid-column:1}}
+
+/* fluxo */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);overflow:hidden;margin:0;padding:0}
+.flow li{list-style:none;padding:20px 20px 22px;border-right:1px solid var(--rule);position:relative}
+.flow li:last-child{border-right:0;background:var(--accent-soft)}
+.flow .step{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.flow h3{font-family:var(--display);font-stretch:95%;font-size:21px;margin:6px 0 8px}
+.flow p{margin:0;font-size:14.5px;color:var(--ink-2)}
+.flow li:not(:last-child)::after{content:"→";position:absolute;right:-9px;top:22px;background:var(--surface);color:var(--muted);font-size:14px;line-height:1;padding:2px 0;z-index:1}
+@media (max-width:860px){.flow{grid-template-columns:1fr 1fr}.flow li:nth-child(2){border-right:0}.flow li:nth-child(-n+2){border-bottom:1px solid var(--rule)}.flow li::after{display:none}}
+@media (max-width:480px){.flow{grid-template-columns:1fr}.flow li{border-right:0;border-bottom:1px solid var(--rule)}.flow li:last-child{border-bottom:0}}
+
+/* ============ CASES ============ */
+.case{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr);gap:clamp(24px,4vw,48px);padding-block:44px;border-bottom:1px solid var(--rule)}
+.case:last-child{border-bottom:0}
+@media (max-width:960px){
+  .case{grid-template-columns:1fr;gap:0;padding-block:32px}
+  .case > div:first-child{display:contents}
+  .case .tag{order:1}
+  .case h3{order:2;margin-bottom:14px}
+  .case .demo{order:3;margin-bottom:20px}
+  .case .facts{order:4}
+  .case .chips{order:5}
+}
+.case h3{font-family:var(--display);font-weight:750;font-stretch:90%;font-size:clamp(26px,3vw,34px);line-height:1.05;margin:8px 0 16px;text-wrap:balance}
+.case .tag{font-family:var(--mono);font-size:12.5px;color:var(--accent-ink);letter-spacing:.04em}
+.facts{margin:0;display:grid;gap:14px}
+.facts div{display:grid;gap:2px}
+.facts dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.facts dd{margin:0;color:var(--ink-2);font-size:15.5px}
+.facts .impact{border-left:2px solid var(--accent);padding-left:12px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.chip{font-family:var(--mono);font-size:12px;padding:3px 8px;border:1px solid var(--rule);border-radius:4px;color:var(--ink-2);background:var(--surface)}
+
+/* demo */
+.demo{background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);box-shadow:0 1px 0 var(--rule),0 12px 32px -18px rgba(0,0,0,.25);min-width:0}
+.demo-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:10px 14px;border-bottom:1px solid var(--rule)}
+.demo-title{font-weight:600;font-size:14px}
+.fict{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--warn);background:var(--warn-soft);padding:3px 7px;border-radius:3px}
+.demo-body{padding:14px;display:grid;gap:14px;min-width:0}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.controls label{font-size:12.5px;color:var(--muted);margin-right:2px}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--rule);border-radius:5px;overflow:hidden;max-width:100%}
+.seg button{font:500 13px var(--body);padding:6px 10px;border:0;background:transparent;color:var(--ink-2);cursor:pointer;border-right:1px solid var(--rule)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.seg button:focus-visible{outline-offset:-3px}
+@media (max-width:520px){.seg{display:flex;width:100%}.seg button{flex:1 1 auto;border-bottom:1px solid var(--rule)}}
+select,input[type=number]{font:500 14px var(--mono);color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:5px;padding:6px 8px;max-width:100%}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(138px,1fr));gap:8px}
+.kpi{background:var(--surface-2);border-radius:5px;padding:10px 12px;min-width:0}
+.kpi span{display:block;font-size:11.5px;color:var(--muted);letter-spacing:.03em}
+.kpi b{display:block;font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:clamp(16px,1.6vw,19px);font-weight:500;margin-top:2px;white-space:nowrap}
+.kpi i{font-style:normal;font-size:12px;font-family:var(--mono)}
+.up{color:var(--good)} .down{color:var(--bad)} .neu{color:var(--muted)}
+.chart{position:relative;height:260px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;padding:3px 8px;border-radius:999px;font-weight:500}
+.pill.ok{background:var(--good-soft);color:var(--good)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.note{font-size:13px;color:var(--muted);margin:0}
+
+/* indicador de qualidade da base */
+.qual{border:1px solid var(--rule);border-radius:5px;font-size:13.5px}
+.qual summary{cursor:pointer;padding:8px 12px;color:var(--ink-2);font-weight:500}
+.qual[open] summary{border-bottom:1px solid var(--rule)}
+.qual .qbody{padding:10px 12px;display:grid;gap:8px}
+.qual table{width:100%;border-collapse:collapse}
+.qual td{padding:4px 0;border-bottom:1px dashed var(--rule)}
+.qual td:last-child{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.qual tr:last-child td{border-bottom:0;font-weight:600}
+
+/* DRE */
+.dre{width:100%;min-width:420px;border-collapse:collapse;font-size:14px}
+.dre td{padding:6px 4px;border-bottom:1px solid var(--rule)}
+.dre td:nth-child(n+2){text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.dre tr.tot td{font-weight:600;border-bottom:1.5px solid var(--ink-2)}
+.dre tr.hl td{background:var(--accent-soft);font-weight:600}
+.dre .neg{color:var(--bad)}
+.dre .av{color:var(--muted);font-size:12.5px}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* preço */
+.calc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:560px){.calc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.calc label{display:grid;gap:4px;font-size:12.5px;color:var(--muted)}
+.calc input{width:100%}
+.price{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:end;justify-content:space-between;padding:12px 14px;border:1px solid var(--rule);border-radius:5px}
+.price b{font-family:var(--display);font-stretch:85%;font-size:clamp(32px,4vw,44px);line-height:1;font-weight:750;font-variant-numeric:tabular-nums}
+.price b.sm{font-size:clamp(22px,2.4vw,28px)}
+.price span{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+.stackbar{display:flex;height:30px;border-radius:4px;overflow:hidden;gap:2px;background:var(--surface)}
+.stackbar div{min-width:2px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--ink-2)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+
+/* ============ TRAJETÓRIA ============ */
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,5vw,64px)}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--rule)}
+.timeline li{position:relative;padding:0 0 22px 22px}
+.timeline li::before{content:"";position:absolute;left:-6px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--surface);border:2px solid var(--muted)}
+.timeline li.now::before{background:var(--accent);border-color:var(--accent)}
+.timeline b{font-family:var(--display);font-stretch:95%;font-size:18px;font-weight:700}
+.timeline .org{display:block;font-size:13.5px;color:var(--muted)}
+.timeline p{margin:2px 0 0;color:var(--ink-2);font-size:15px}
+.timeline .gain{display:block;font-size:13.5px;color:var(--accent-ink);margin-top:4px}
+.sub-h{font-family:var(--mono);font-size:13px;color:var(--muted);font-weight:400;margin:0 0 8px}
+.edu{display:grid}
+.edu div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.edu b{font-weight:600}
+.edu .course-note{font-weight:400;color:var(--muted);font-size:14px}
+.edu span{color:var(--muted);font-size:14px;text-align:right}
+.edu p{margin:0;min-width:0}
+.edu .edu-mods{display:block;color:var(--muted);font-size:13px;line-height:1.5;margin-top:3px}
+.edu .status{display:block;font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);white-space:nowrap}
+@media (max-width:420px){.edu div{flex-direction:column;gap:0}.edu span{text-align:left}.edu .edu-cur span{margin-top:6px}}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:32px}
+.skills h4{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.skills ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+
+/* ============ CONTATO ============ */
+.contact{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.contact:empty{display:none}
+.contact .addr{font-family:var(--mono);font-size:15px;padding:10px 14px;border:1px solid var(--rule);border-radius:var(--radius);background:var(--surface);user-select:all;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--rule);padding-block:28px 48px;color:var(--muted);font-size:13.5px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Tiago Cristovão da Silva <span>· Controladoria, FP&A & Dados</span></a>
+    <div class="top-right">
+    <nav aria-label="Seções">
+      <a href="#metodo">Método</a>
+      <a href="#cases">Cases</a>
+      <a href="#trajetoria">Trajetória</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema claro/escuro">
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+    </div>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Controladoria · FP&A · Business Intelligence</div>
+        <h1>Transformo extratos de ERP em <em>decisão de diretoria</em>.</h1>
+        <p class="lede">Sou Tiago Cristovão da Silva, administrador e Coordenador de E-commerce, com atuação integrada em operação, controladoria e análise de dados em um grupo empresarial com operação multiempresa. Estruturo DRE, DFC, fluxo de caixa, contas a pagar e indicadores operacionais, transformando relatórios de ERPs financeiros e de vendas, além de bases internas, em análises usadas na gestão e na tomada de decisão.</p>
+        <div class="cta">
+          <a class="btn primary" href="#cases">Explorar os cases ↓</a>
+          <!-- Botão de currículo: configure CONTATO.curriculo no JavaScript. Fica oculto enquanto vazio. -->
+          <a class="btn" id="btnCvHero" target="_blank" rel="noopener" hidden>Baixar currículo</a>
+        </div>
+      </div>
+      <aside class="ledger" aria-label="Resumo profissional">
+        <header><span>Ficha profissional</span><span>Resumo</span></header>
+        <!-- FOTO: salve a imagem como "foto.jpg" na mesma pasta do index.html. Sem o arquivo, a foto é ocultada. -->
+        <div class="who">
+          <img src="foto.jpg" alt="Foto de Tiago Cristovão da Silva" width="76" height="76" loading="eager" onerror="this.remove()">
+          <div><b>Tiago Cristovão da Silva</b><small>Controladoria · FP&A · Dados</small></div>
+        </div>
+        <dl>
+          <div class="row"><dt>1.1</dt><dd><b>Coordenador de E-commerce</b><small>Grupo empresarial · operação multiempresa</small></dd></div>
+          <div class="row"><dt>1.2</dt><dd><b>Atuação em Controladoria e FP&A</b><small>DRE, DFC, EBITDA, fluxo de caixa, orçamento, conciliação bancária e reporte gerencial</small></dd></div>
+          <div class="row"><dt>1.3</dt><dd><b>Soluções em produção</b><small>SIG executivo, contas a pagar e pagas, torre de controle, compras e formação de preço</small></dd></div>
+          <div class="row"><dt>1.4</dt><dd><b>Ferramentas</b><small>Excel, Power BI, SQL, Python, HTML/JS · Integração com ERPs e bases que exportam Excel, CSV ou PDF</small></dd></div>
+        </dl>
+      </aside>
+    </div>
+
+    <div class="totals" role="list" aria-label="Indicadores resumidos">
+      <div role="listitem"><b>Multiempresa</b><span>Escopo de atuação</span></div>
+      <div role="listitem"><b>Operação + Financeiro + Dados</b><span>Áreas integradas</span></div>
+      <div role="listitem"><b>Excel · CSV · PDF</b><span>Fontes de ERPs e bases operacionais</span></div>
+      <div role="listitem"><b>4</b><span>Soluções demonstradas</span></div>
+    </div>
+  </div>
+
+  <section id="metodo">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="code">2.0</span>
+        <div><h2>Do extrato à decisão</h2></div>
+        <p>Todo painel que construo segue o mesmo caminho. O objetivo não é o gráfico: é a pergunta da diretoria que ele responde.</p>
+      </div>
+      <ol class="flow">
+        <li><span class="step">Etapa 1</span><h3>Extrair</h3><p>Relatórios de ERP financeiro e de vendas em Excel, CSV ou PDF, notas fiscais, extratos bancários e planilhas operacionais. Importação por arquivo, reduzindo retrabalho manual.</p></li>
+        <li><span class="step">Etapa 2</span><h3>Classificar</h3><p>Plano de contas gerencial, tabela de-para e regras de natureza de gasto. O que não classifica fica visível para revisão.</p></li>
+        <li><span class="step">Etapa 3</span><h3>Validar</h3><p>Transferências intragrupo, duplicidades e divergências tratadas antes do número chegar à reunião. Indicador de qualidade da base.</p></li>
+        <li><span class="step">Etapa 4</span><h3>Decidir</h3><p>Visão executiva enxuta, com diagnóstico automático, e visão operacional para acompanhamento do dia a dia.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="cases">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="code">3.0</span>
+        <div><h2>Cases com demonstração</h2></div>
+        <p>Quatro soluções gerenciais que construí e mantenho. As demonstrações reproduzem a lógica dos originais com uma empresa fictícia: todos os números são simulados e nenhum dado real do empregador é utilizado.</p>
+      </div>
+
+      <!-- CASE 1 · SIG -->
+      <article class="case" id="sig">
+        <div>
+          <span class="tag">3.1 · SIG executivo</span>
+          <h3>DRE gerencial para a reunião de diretoria</h3>
+          <dl class="facts">
+            <div><dt>Problema</dt><dd>A reunião de SIG dependia de planilhas montadas manualmente a cada mês, com classificações gerenciais inconsistentes entre as empresas do grupo.</dd></div>
+            <div><dt>Solução</dt><dd>Painel executivo que importa o extrato do ERP, aplica uma tabela mestre de classificação gerencial baseada no plano de contas e gera DRE, margens e cascata até o EBITDA. Perfis de pagamento sem classificação permanecem visíveis para correção na tabela mestre.</dd></div>
+            <div class="impact"><dt>Impacto</dt><dd>Maior padronização das classificações, redução da consolidação manual e mais rastreabilidade dos números apresentados na reunião gerencial.</dd></div>
+            <div><dt>Decisão suportada</dt><dd>A diretoria passa a discutir margem, estrutura de custos e desvios de despesa, em vez de gastar tempo conciliando a origem do número.</dd></div>
+          </dl>
+          <div class="chips"><span class="chip">HTML/JS</span><span class="chip">Chart.js</span><span class="chip">SheetJS</span><span class="chip">Plano de contas</span></div>
+        </div>
+        <div class="demo">
+          <div class="demo-bar"><span class="demo-title">DRE gerencial · Empresa Modelo (fictícia)</span><span class="fict">Dados fictícios</span></div>
+          <div class="demo-body">
+            <div class="controls">
+              <label for="dreMes">Competência</label>
+              <select id="dreMes"></select>
+              <span id="dreClass" class="pill warn" aria-live="polite"></span>
+            </div>
+            <div class="chart"><canvas id="chWaterfall" role="img" aria-label="Cascata da receita líquida até o EBITDA na competência selecionada"></canvas></div>
+            <div class="tbl-wrap"><table class="dre" id="dreTable"><caption class="sr-only">DRE gerencial simulada</caption></table></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CASE 2 · CONTAS A PAGAR E PAGAS -->
+      <article class="case" id="pagar">
+        <div>
+          <span class="tag">3.2 · Contas a pagar e pagas</span>
+          <h3>Onde o caixa do grupo realmente vai</h3>
+          <dl class="facts">
+            <div><dt>Problema</dt><dd>Várias empresas, pagamentos intragrupo misturados com saídas reais e pouca visibilidade consolidada da concentração por fornecedor.</dd></div>
+            <div><dt>Solução</dt><dd>Painel com importação por empresa, identificação de transferências intragrupo, DFC executivo, curva ABC de fornecedores, alertas de desvio e indicador de qualidade da base.</dd></div>
+            <div class="impact"><dt>Impacto</dt><dd>Consolidação financeira mais confiável e maior foco sobre os fornecedores e categorias que efetivamente concentram os desembolsos.</dd></div>
+            <div><dt>Decisão suportada</dt><dd>Direcionar negociações para os fornecedores mais representativos e validar a qualidade da base antes da apresentação executiva.</dd></div>
+          </dl>
+          <div class="chips"><span class="chip">DFC</span><span class="chip">Curva ABC</span><span class="chip">ERP financeiro</span><span class="chip">Governança de dados</span></div>
+        </div>
+        <div class="demo">
+          <div class="demo-bar"><span class="demo-title" id="cpTitulo">Pagamentos do mês</span><span class="fict">Dados fictícios</span></div>
+          <div class="demo-body">
+            <div class="controls">
+              <label id="cpEmpLbl">Empresa</label>
+              <div class="seg" id="cpEmp" role="group" aria-labelledby="cpEmpLbl"></div>
+            </div>
+            <div class="kpis" id="cpKpis" aria-live="polite"></div>
+            <details class="qual" id="cpQual">
+              <summary>Como o indicador de qualidade da base é calculado</summary>
+              <div class="qbody">
+                <p class="note">Representação da lógica de controle usada no painel original. A nota parte de 100 e perde pontos por pendência encontrada na base importada. Valores fictícios.</p>
+                <table id="cpQualTbl"><caption class="sr-only">Composição do indicador de qualidade</caption></table>
+              </div>
+            </details>
+            <div class="chart"><canvas id="chPareto" role="img" aria-label="Curva ABC de fornecedores: participação individual e acumulada no total pago"></canvas></div>
+            <p class="note">Barras: participação de cada fornecedor no total pago (classe A em destaque). Linha: participação acumulada. Transferências intragrupo excluídas.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- CASE 3 · TORRE DE CONTROLE -->
+      <article class="case" id="torre">
+        <div>
+          <span class="tag">3.3 · Torre de controle</span>
+          <h3>Pedidos, SLA e capacidade de produção dia a dia</h3>
+          <dl class="facts">
+            <div><dt>Problema</dt><dd>O volume de pedidos e de rotas cresceu, mas o dimensionamento da produção ainda dependia muito de percepção. Faltava uma visão consolidada para sustentar decisões sobre capacidade e equipe.</dd></div>
+            <div><dt>Solução</dt><dd>Torre de controle com visão executiva e operacional: pedidos por dia e por rota, SLA de entrega, itens a produzir e comparação com o período anterior.</dd></div>
+            <div class="impact"><dt>Impacto</dt><dd>Maior previsibilidade do volume diário, apoio ao dimensionamento da equipe e priorização das rotas com risco de atraso.</dd></div>
+            <div><dt>Decisão suportada</dt><dd>Dimensionar a operação com base em volume real e agir rapidamente sobre rotas ou períodos com perda de SLA.</dd></div>
+          </dl>
+          <div class="chips"><span class="chip">SLA</span><span class="chip">Logística</span><span class="chip">ERP de vendas e NF</span><span class="chip">JavaScript</span></div>
+        </div>
+        <div class="demo">
+          <div class="demo-bar"><span class="demo-title">Torre de controle · últimos 14 dias simulados</span><span class="fict">Dados fictícios</span></div>
+          <div class="demo-body">
+            <div class="controls">
+              <label id="trRotaLbl">Rota</label>
+              <div class="seg" id="trRota" role="group" aria-labelledby="trRotaLbl"></div>
+              <label for="trDiaSel">Dia</label>
+              <select id="trDiaSel"></select>
+            </div>
+            <div class="kpis" id="trKpis" aria-live="polite"></div>
+            <div class="chart"><canvas id="chTorre" role="img" aria-label="Pedidos por dia, no prazo e atrasados, nos últimos 14 dias simulados"></canvas></div>
+            <p class="note">Clique em um dia (ou use o seletor) para ver o fechamento dele contra o dia anterior. Variações de volume aparecem em cor neutra; verde e vermelho só no SLA. Meta de SLA de 93% fictícia, para demonstração.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- CASE 4 · FORMAÇÃO DE PREÇO -->
+      <article class="case" id="preco">
+        <div>
+          <span class="tag">3.4 · Compras e formação de preço</span>
+          <h3>Formação gerencial de preço por markup reverso</h3>
+          <dl class="facts">
+            <div><dt>Problema</dt><dd>Preços definidos sem enxergar claramente o peso de impostos, folha e despesas. Modelo anterior com centenas de fórmulas quebradas e alíquotas desatualizadas.</dd></div>
+            <div><dt>Solução</dt><dd>Auditoria e reconstrução de um modelo gerencial de formação de preço considerando cenário de Lucro Real, ICMS/FCP estadual, PIS/COFINS não cumulativos, despesas e rateio de folha. No lado de compras, análise com curva ABC, giro e prioridades.</dd></div>
+            <div class="impact"><dt>Impacto</dt><dd>Maior visibilidade da composição do preço, das despesas absorvidas e da margem esperada antes da definição comercial.</dd></div>
+            <div><dt>Decisão suportada</dt><dd>Avaliar margem e estrutura de custo antes de fechar o preço e priorizar compras com base em relevância e giro.</dd></div>
+          </dl>
+          <div class="chips"><span class="chip">Lucro Real</span><span class="chip">Markup</span><span class="chip">Excel</span><span class="chip">Curva ABC</span></div>
+        </div>
+        <div class="demo">
+          <div class="demo-bar"><span class="demo-title">Simulador de preço de venda</span><span class="fict">Valores de exemplo</span></div>
+          <div class="demo-body">
+            <div class="calc">
+              <label for="pCusto">Custo unitário (R$)<input id="pCusto" type="number" step="0.01" min="0" value="12.40" inputmode="decimal"></label>
+              <label for="pIcms">ICMS + FCP (%)<input id="pIcms" type="number" step="0.01" min="0" value="12.00" inputmode="decimal"></label>
+              <label for="pPis">PIS (%)<input id="pPis" type="number" step="0.01" min="0" value="1.65" inputmode="decimal"></label>
+              <label for="pCofins">COFINS (%)<input id="pCofins" type="number" step="0.01" min="0" value="7.60" inputmode="decimal"></label>
+              <label for="pDesp">Despesas fixas e folha (%)<input id="pDesp" type="number" step="0.01" min="0" value="18.00" inputmode="decimal"></label>
+              <label for="pMargem">Margem desejada (%)<input id="pMargem" type="number" step="0.01" min="0" value="10.00" inputmode="decimal"></label>
+            </div>
+            <div class="price" id="pOut" aria-live="polite"></div>
+            <div class="stackbar" id="pBar" aria-hidden="true"></div>
+            <div class="legend" id="pLeg"></div>
+            <p class="note">Preço = custo ÷ (1 − impostos − despesas − margem). Modelo gerencial simplificado para demonstração. Não considera créditos tributários de entrada, particularidades fiscais por NCM, regimes especiais ou demais variáveis de uma apuração fiscal completa.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="trajetoria">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="code">4.0</span>
+        <div><h2>Trajetória: da operação ao número</h2></div>
+        <p>Passei por chão de fábrica, armazém, logística e manutenção antes da controladoria. Por isso meus painéis falam a língua de quem opera, não só de quem analisa.</p>
+      </div>
+      <div class="two">
+        <ol class="timeline">
+          <li class="now"><b>Coordenador de E-commerce</b><span class="org">Grupo empresarial · atual</span><p>Atuação integrada em operação, controladoria, FP&A, contas a pagar, fluxo de caixa, orçamento, indicadores e reporte gerencial.</p><span class="gain">DRE, DFC, EBITDA, SIG, painéis executivos</span></li>
+          <li><b>Administração, RH e Financeiro</b><p>Rotinas administrativas e financeiras em clínica, construtoras e grupo de pedreira e concreto.</p><span class="gain">Base de processos e conciliação</span></li>
+          <li><b>Planejamento de manutenção</b><p>Planejamento de manutenção em resort.</p><span class="gain">Cronograma, custo e prioridade</span></li>
+          <li><b>Análise logística</b><p>Roteirização e planejamento de carga em empresa de materiais de construção.</p><span class="gain">Rota, SLA e custo de frete</span></li>
+          <li><b>Armazém e inspeção de qualidade</b><p>Cerca de cinco anos em inspeção de qualidade automotiva e operação de armazém.</p><span class="gain">Disciplina de processo e conferência</span></li>
+        </ol>
+        <div>
+          <h3 class="sub-h">Formação acadêmica</h3>
+          <div class="edu">
+            <!-- Pós em andamento: ajustar status/ano de conclusão quando houver -->
+            <div class="edu-cur"><p><b>Pós-graduação em Ciência de Dados&nbsp;+&nbsp;IA</b><small class="edu-mods">SQL · Python · Estatística · Machine Learning · Deep Learning · IA Generativa · MLOps</small></p><span><em class="status">Em andamento</em>UNIPDS</span></div>
+            <div><b>Administração</b><span>UENP</span></div>
+            <div><b>Pós-graduação em Gestão de Pessoas</b><span>Unopar · 2023</span></div>
+          </div>
+          <h3 class="sub-h" style="margin-top:24px">Cursos</h3>
+          <div class="edu">
+            <!-- Confirmar nomenclatura exata conforme certificados -->
+            <div><b>Power BI Impressionador</b><span>Hashtag · 117 h</span></div>
+            <div><b>Excel Impressionador <small class="course-note">(Análise de Dados)</small></b><span>Hashtag · 38 h</span></div>
+            <div><b>Excel Avançado</b><span>114 h</span></div>
+          </div>
+          <div class="skills">
+            <div><h4>Finanças</h4><ul><li class="chip">DRE</li><li class="chip">DFC</li><li class="chip">EBITDA</li><li class="chip">Orçamento</li><li class="chip">Conciliação bancária</li><li class="chip">Formação de preço</li></ul></div>
+            <div><h4>Dados</h4><ul><li class="chip">Power BI</li><li class="chip">SQL</li><li class="chip">Python</li><li class="chip">Power Query</li><li class="chip">Excel</li><li class="chip">HTML/JS</li></ul></div>
+            <div><h4>Sistemas e ERPs</h4><ul><li class="chip">ERPs financeiros</li><li class="chip">ERPs de vendas e NF-e</li><li class="chip">OMIE</li><li class="chip">Bling</li><li class="chip">VExpenses</li></ul></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="code">5.0</span>
+        <div><h2>Vamos transformar dados em decisão.</h2></div>
+        <p>Tenho interesse em oportunidades em Controladoria, FP&A, Business Intelligence e análise de dados aplicada à gestão, especialmente em ambientes onde operação e finanças precisam trabalhar de forma integrada.</p>
+      </div>
+      <!-- Os botões abaixo são gerados a partir de CONTATO (JavaScript). Campo vazio = botão não aparece. -->
+      <div class="contact" id="contactBox"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Os painéis demonstrados usam uma empresa fictícia e números simulados. Nenhum dado real de empregador é exibido nesta página.</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+/* =====================================================================
+   CONFIGURAÇÕES
+   PREENCHA ESTES CAMPOS ANTES DE PUBLICAR
+   - linkedin:  URL completa do perfil
+   - email:     endereço de e-mail
+   - telefone:  com DDD, como deve aparecer (ex.: "(21) 99999-9999")
+   - curriculo: caminho do PDF publicado junto com o site (ver comentário no campo)
+   Enquanto vazios, os botões correspondentes não aparecem para o visitante.
+   ===================================================================== */
+const CONTATO = {
+  linkedin: "https://www.linkedin.com/in/tiagocristovaosilva/",
+  email: "tiagoscristovao@outlook.com",
+  telefone: "",
+  // Para habilitar o download do currículo, publique o arquivo "curriculo.pdf"
+  // na mesma pasta do index.html e configure:
+  // curriculo: "curriculo.pdf"
+  curriculo: ""
+};
+const META_SLA = 93; // meta fictícia, apenas para a demonstração
+
+/* =====================================================================
+   UTILIDADES
+   ===================================================================== */
+const brl  = v => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0});
+const brl2 = v => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL",minimumFractionDigits:2,maximumFractionDigits:2});
+const pct  = (v,d=1) => v.toLocaleString("pt-BR",{minimumFractionDigits:d,maximumFractionDigits:d})+"%";
+const mil  = v => "R$ "+(v/1000).toLocaleString("pt-BR",{maximumFractionDigits:0})+" mil";
+const css  = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const $    = id => document.getElementById(id);
+const fmtD = d => String(d.getDate()).padStart(2,"0")+"/"+String(d.getMonth()+1).padStart(2,"0");
+const fmtM = d => d.toLocaleDateString("pt-BR",{month:"short"}).replace(".","")+"/"+d.getFullYear();
+function rng(seed){return()=>{seed=(seed*16807)%2147483647;return(seed-1)/2147483646}} // gerador com semente: dados sempre iguais
+const charts = {};
+
+function segGroup(el,items,onPick,initial){
+  el.innerHTML="";
+  items.forEach(it=>{
+    const b=document.createElement("button");b.type="button";b.textContent=it;b.setAttribute("aria-pressed",String(it===initial));
+    b.onclick=()=>{[...el.children].forEach(c=>c.setAttribute("aria-pressed","false"));b.setAttribute("aria-pressed","true");onPick(it)};
+    el.appendChild(b);
+  });
+}
+/* Variação: dir = "neutro" (volume/carga), "alta-boa" ou "baixa-boa" */
+function variacao(atual,anterior,dir,sufixo){
+  if(!anterior)return "";
+  const d=(atual-anterior)/anterior*100;
+  const cls=dir==="neutro"?"neu":((dir==="alta-boa"?d>=0:d<=0)?"up":"down");
+  return '<i class="'+cls+'">'+(d>=0?"▲ +":"▼ ")+pct(d,0)+" "+(sufixo||"")+"</i>";
+}
+function baseOpts(){
+  const muted=css("--muted"),grid=css("--grid");
+  return {responsive:true,maintainAspectRatio:false,animation:{duration:window.matchMedia("(prefers-reduced-motion: reduce)").matches?0:350},
+    plugins:{legend:{display:false},tooltip:{backgroundColor:css("--ink"),titleColor:css("--bg"),bodyColor:css("--bg"),footerColor:css("--bg"),padding:10,cornerRadius:4,titleFont:{family:"IBM Plex Sans",weight:"600"},bodyFont:{family:"IBM Plex Mono"}}},
+    scales:{x:{grid:{display:false},border:{color:grid},ticks:{color:muted,font:{family:"IBM Plex Sans",size:11}}},
+            y:{grid:{color:grid},border:{display:false},ticks:{color:muted,font:{family:"IBM Plex Mono",size:11}}}}};
+}
+const legendaTopo = () => ({display:true,position:"top",align:"end",labels:{color:css("--ink-2"),boxWidth:10,boxHeight:10,font:{size:11}}});
+
+/* =====================================================================
+   DADOS FICTÍCIOS
+   Datas sempre relativas à data do navegador; valores gerados por semente.
+   ===================================================================== */
+const HOJE = new Date(); HOJE.setHours(0,0,0,0);
+
+// DRE: últimos 8 meses fechados
+const MESES=[];
+for(let k=8;k>=1;k--){MESES.push(new Date(HOJE.getFullYear(),HOJE.getMonth()-k,1))}
+const dreData=MESES.map((d,i)=>{const r=rng(101+i*7);const bruta=1850000+i*42000+r()*120000;
+  const ded=bruta*(0.172+r()*0.01);const liq=bruta-ded;const cmv=liq*(0.515+r()*0.03);const lb=liq-cmv;
+  const pess=liq*(0.148+r()*0.012),adm=liq*(0.058+r()*0.01),log=liq*(0.064+r()*0.012),com=liq*(0.021+r()*0.006);
+  return {m:fmtM(d),bruta,ded,liq,cmv,lb,pess,adm,log,com,ebitda:lb-pess-adm-log-com,semClass:Math.floor(r()*5)}});
+
+// Contas pagas: mês fechado anterior, 4 empresas fictícias
+const EMPRESAS=["Consolidado","Empresa A","Empresa B","Empresa C","Empresa D"];
+const FORN=["Matéria-prima A","Matéria-prima B","Matéria-prima C","Insumos D","Embalagens","Transporte e frete","Gás e utilidades","Limpeza e higiene","Matéria-prima E","Mercadoria p/ revenda","Energia elétrica","Manutenção","Aluguel","Serviços contábeis","Software de gestão","Uniformes e EPI","Material de escritório","Outros (38 fornecedores)"];
+const cpData={};
+EMPRESAS.slice(1).forEach((e,ei)=>{const r=rng(900+ei*31);const esc=[1,.55,.48,.12][ei];
+  cpData[e]=FORN.map((f,k)=>({f,v:Math.round((420000/Math.pow(k+1,0.95))*esc*(0.6+r()*0.8))}))});
+cpData.Consolidado=FORN.map((f,k)=>({f,v:EMPRESAS.slice(1).reduce((s,e)=>s+cpData[e][k].v,0)}));
+// Qualidade da base: pontos perdidos por tipo de pendência (fictício)
+const QUALIDADE={
+  "Empresa A":{semClass:2,incompletos:1,duplic:2,diverg:1,transf:18},
+  "Empresa B":{semClass:4,incompletos:3,duplic:2,diverg:3,transf:11},
+  "Empresa C":{semClass:6,incompletos:4,duplic:3,diverg:4,transf:9},
+  "Empresa D":{semClass:1,incompletos:1,duplic:0,diverg:1,transf:4}
+};
+QUALIDADE.Consolidado={semClass:3,incompletos:2,duplic:2,diverg:2,transf:42};
+const nota = q => 100-q.semClass-q.incompletos-q.duplic-q.diverg;
+
+// Torre de controle: últimos 14 dias até hoje
+const ROTAS=["Todas","Rota 1","Rota 2","Rota 3","Rota 4"];
+const DIAS=[];
+for(let k=13;k>=0;k--){const d=new Date(HOJE);d.setDate(HOJE.getDate()-k);DIAS.push(d)}
+const trData={};
+ROTAS.slice(1).forEach((rt,ri)=>{const r=rng(3000+ri*17);const base=[62,48,55,30][ri];const slaBase=[.95,.92,.84,.96][ri];
+  trData[rt]=DIAS.map((d,k)=>{const wd=d.getDay();const f=wd===0?0.35:wd===6?0.7:1;const ped=Math.max(1,Math.round((base+k*1.4)*f*(0.85+r()*0.3)));
+    const atr=Math.min(ped,Math.round(ped*(1-slaBase)*(0.5+r()*1.2)));return {ped,atr,itens:Math.round(ped*(6.5+r()*2))}})});
+trData.Todas=DIAS.map((d,k)=>ROTAS.slice(1).reduce((s,rt)=>({ped:s.ped+trData[rt][k].ped,atr:s.atr+trData[rt][k].atr,itens:s.itens+trData[rt][k].itens}),{ped:0,atr:0,itens:0}));
+
+/* =====================================================================
+   DRE
+   ===================================================================== */
+const sel=$("dreMes");
+MESES.forEach((d,i)=>{const o=document.createElement("option");o.value=i;o.textContent=fmtM(d);sel.appendChild(o)});
+sel.value=MESES.length-1;
+function renderDRE(){
+  const i=+sel.value,d=dreData[i],p=dreData[i-1];
+  const rows=[
+    ["Receita bruta",d.bruta,""],["(−) Deduções e impostos",-d.ded,""],
+    ["(=) Receita líquida",d.liq,"tot"],["(−) CMV",-d.cmv,""],
+    ["(=) Lucro bruto",d.lb,"tot"],["(−) Pessoal",-d.pess,""],["(−) Administrativas",-d.adm,""],
+    ["(−) Logística e frete",-d.log,""],["(−) Comerciais",-d.com,""],["(=) EBITDA",d.ebitda,"hl"]];
+  const prev=p?[p.bruta,-p.ded,p.liq,-p.cmv,p.lb,-p.pess,-p.adm,-p.log,-p.com,p.ebitda]:null;
+  let h='<caption class="sr-only">DRE gerencial simulada de '+d.m+'</caption><thead><tr><td class="av">Conta</td><td class="av">'+d.m+'</td><td class="av">% RL</td><td class="av">Δ mês ant.</td></tr></thead><tbody>';
+  rows.forEach((r,k)=>{const v=r[1];let dv="—";
+    if(prev){const pv=prev[k];const delta=(Math.abs(v)-Math.abs(pv))/Math.abs(pv)*100;const custo=v<0;const bom=custo?delta<=0:delta>=0;
+      dv='<span class="'+(bom?"up":"down")+'">'+(delta>=0?"+":"")+pct(delta)+'</span>'}
+    h+='<tr class="'+r[2]+'"><td>'+r[0]+'</td><td class="'+(v<0?"neg":"")+'">'+(v<0?"("+brl(-v)+")":brl(v))+'</td><td class="av">'+pct(Math.abs(v)/d.liq*100)+'</td><td>'+dv+'</td></tr>'});
+  $("dreTable").innerHTML=h+'</tbody>';
+  const pill=$("dreClass");
+  if(d.semClass>0){pill.className="pill warn";pill.textContent="⚠ "+d.semClass+" perfis de pagamento sem classificação"}
+  else{pill.className="pill ok";pill.textContent="✓ 100% classificado"}
+  // cascata: receita líquida → EBITDA
+  const steps=[["Receita líq.",d.liq,true],["CMV",-d.cmv],["Pessoal",-d.pess],["Adm.",-d.adm],["Logística",-d.log],["Comerciais",-d.com],["EBITDA",d.ebitda,true]];
+  let acc=0;const data=[],cores=[];
+  steps.forEach(s=>{if(s[2]){data.push([0,s[1]]);acc=s[1];cores.push(css("--accent"))}else{data.push([acc+s[1],acc]);acc+=s[1];cores.push(css("--s3"))}});
+  const o=baseOpts();o.scales.y.ticks.callback=v=>"R$ "+(v/1e6).toLocaleString("pt-BR",{maximumFractionDigits:1})+" mi";
+  o.plugins.tooltip.callbacks={label:c=>{const s=steps[c.dataIndex];return (s[2]?"":"− ")+brl(Math.abs(s[1]))+" · "+pct(Math.abs(s[1])/d.liq*100)+" da RL"}};
+  if(charts.w)charts.w.destroy();
+  charts.w=new Chart($("chWaterfall"),{type:"bar",data:{labels:steps.map(s=>s[0]),datasets:[{data,backgroundColor:cores,borderRadius:3,borderSkipped:false,maxBarThickness:46}]},options:o});
+}
+sel.onchange=renderDRE;
+
+/* =====================================================================
+   CONTAS A PAGAR
+   ===================================================================== */
+let cpAtual="Consolidado";
+$("cpTitulo").textContent="Pagamentos · "+fmtM(MESES[MESES.length-1])+" (simulado)";
+function renderQualidade(emp){
+  const q=QUALIDADE[emp];
+  $("cpQualTbl").innerHTML='<caption class="sr-only">Composição do indicador de qualidade</caption>'+
+    '<tr><td>Registros sem classificação gerencial</td><td>−'+q.semClass+'</td></tr>'+
+    '<tr><td>Campos obrigatórios incompletos</td><td>−'+q.incompletos+'</td></tr>'+
+    '<tr><td>Possíveis duplicidades</td><td>−'+q.duplic+'</td></tr>'+
+    '<tr><td>Divergências entre extrato e ERP</td><td>−'+q.diverg+'</td></tr>'+
+    '<tr><td>Transferências intragrupo identificadas e excluídas</td><td>'+q.transf+' lanç.</td></tr>'+
+    '<tr><td>Nota final</td><td>'+nota(q)+'/100</td></tr>';
+}
+function renderCP(emp){
+  cpAtual=emp;
+  const list=[...cpData[emp]].sort((a,b)=>{if(a.f.startsWith("Outros"))return 1;if(b.f.startsWith("Outros"))return -1;return b.v-a.v});
+  const tot=list.reduce((s,x)=>s+x.v,0);let acc=0;const share=[],cum=[];
+  list.forEach(x=>{const s=x.v/tot*100;acc+=s;share.push(s);cum.push(acc)});
+  const nA=cum.findIndex(c=>c>=80)+1,sc=nota(QUALIDADE[emp]);
+  $("cpKpis").innerHTML=
+    '<div class="kpi"><span>Total pago</span><b>'+mil(tot)+'</b></div>'+
+    '<div class="kpi"><span>Classe A (80%)</span><b>'+nA+' fornec.</b></div>'+
+    '<div class="kpi"><span>Maior fornecedor</span><b>'+pct(share[0])+'</b></div>'+
+    '<div class="kpi"><span>Qualidade da base</span><b>'+sc+'/100</b><i class="'+(sc>=90?"up":"down")+'">'+(sc>=90?"✓ confiável":"⚠ revisar antes de apresentar")+'</i></div>';
+  renderQualidade(emp);
+  const o=baseOpts();o.scales.y.max=100;o.scales.y.ticks.callback=v=>v+"%";
+  o.scales.x.ticks.maxRotation=60;o.scales.x.ticks.minRotation=45;o.scales.x.ticks.callback=function(v){const l=this.getLabelForValue(v);return l.length>14?l.slice(0,13)+"…":l};
+  o.plugins.legend=legendaTopo();
+  o.plugins.tooltip.callbacks={label:c=>c.datasetIndex===0?"Participação: "+pct(c.raw)+" · "+brl(list[c.dataIndex].v):"Acumulado: "+pct(c.raw)};
+  if(charts.p)charts.p.destroy();
+  charts.p=new Chart($("chPareto"),{data:{labels:list.map(x=>x.f),datasets:[
+    {type:"bar",label:"Participação",data:share,backgroundColor:share.map((s,k)=>k<nA?css("--accent"):css("--rule")),borderRadius:3,borderSkipped:"bottom",maxBarThickness:26,order:2},
+    {type:"line",label:"Acumulado",data:cum,borderColor:css("--s2"),backgroundColor:css("--s2"),borderWidth:2,pointRadius:3,pointHoverRadius:5,tension:.25,order:1}]},options:o});
+}
+segGroup($("cpEmp"),EMPRESAS,renderCP,"Consolidado");
+
+/* =====================================================================
+   TORRE DE CONTROLE
+   ===================================================================== */
+let trRota="Todas",trDia=DIAS.length-1;
+const diaSel=$("trDiaSel");
+DIAS.forEach((d,k)=>{const o=document.createElement("option");o.value=k;o.textContent=fmtD(d);diaSel.appendChild(o)});
+diaSel.value=trDia;
+diaSel.onchange=()=>{trDia=+diaSel.value;renderTorreKpis();pintarDia()};
+function renderTorreKpis(){
+  const s=trData[trRota],d=s[trDia],p=s[trDia-1];
+  const sla=(d.ped-d.atr)/d.ped*100,slaP=p?(p.ped-p.atr)/p.ped*100:null;
+  $("trKpis").innerHTML=
+    '<div class="kpi"><span>Pedidos '+fmtD(DIAS[trDia])+'</span><b>'+d.ped+'</b>'+variacao(d.ped,p&&p.ped,"neutro","vs D-1")+'</div>'+
+    '<div class="kpi"><span>SLA (meta '+META_SLA+'%)</span><b class="'+(sla>=META_SLA?"up":"down")+'">'+pct(sla)+'</b>'+
+      (slaP!==null?'<i class="'+(sla>=slaP?"up":"down")+'">'+(sla>=slaP?"▲ +":"▼ ")+pct(sla-slaP)+' p.p.</i>':"")+'</div>'+
+    '<div class="kpi"><span>Itens a produzir</span><b>'+d.itens.toLocaleString("pt-BR")+'</b>'+variacao(d.itens,p&&p.itens,"neutro","vs D-1")+'</div>'+
+    '<div class="kpi"><span>Itens por pedido</span><b>'+(d.itens/d.ped).toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})+'</b>'+variacao(d.itens/d.ped,p&&(p.itens/p.ped),"neutro","vs D-1")+'</div>';
+}
+function pintarDia(){
+  const c=charts.t;if(!c)return;const a=css("--accent"),b=css("--bad");
+  c.data.datasets[0].backgroundColor=c.data.labels.map((_,k)=>k===trDia?a:a+"88");
+  c.data.datasets[1].backgroundColor=c.data.labels.map((_,k)=>k===trDia?b:b+"88");
+  c.update("none");
+}
+function renderTorre(){
+  const s=trData[trRota];
+  const o=baseOpts();o.scales.x.stacked=true;o.scales.y.stacked=true;
+  o.plugins.legend=legendaTopo();
+  o.plugins.tooltip.callbacks={title:c=>"Dia "+c[0].label,footer:c=>{const d=s[c[0].dataIndex];return "SLA: "+pct((d.ped-d.atr)/d.ped*100)}};
+  o.onClick=(e,els)=>{if(els.length){trDia=els[0].index;diaSel.value=trDia;renderTorreKpis();pintarDia()}};
+  o.onHover=(e,els)=>{e.native.target.style.cursor=els.length?"pointer":"default"};
+  if(charts.t)charts.t.destroy();
+  charts.t=new Chart($("chTorre"),{type:"bar",data:{labels:DIAS.map(fmtD),datasets:[
+    {label:"No prazo",data:s.map(d=>d.ped-d.atr),backgroundColor:css("--accent"),borderColor:css("--surface"),borderWidth:{top:2},borderRadius:0,maxBarThickness:28},
+    {label:"Atrasados",data:s.map(d=>d.atr),backgroundColor:css("--bad"),borderColor:css("--surface"),borderWidth:{bottom:2},borderRadius:{topLeft:3,topRight:3},borderSkipped:false,maxBarThickness:28}]},options:o});
+  pintarDia();renderTorreKpis();
+}
+segGroup($("trRota"),ROTAS,r=>{trRota=r;renderTorre()},"Todas");
+
+/* =====================================================================
+   FORMAÇÃO DE PREÇO
+   ===================================================================== */
+const pIds=["pCusto","pIcms","pPis","pCofins","pDesp","pMargem"];
+function renderPreco(){
+  const v=Object.fromEntries(pIds.map(id=>[id,Math.max(0,parseFloat(String($(id).value).replace(",","."))||0)]));
+  const imp=v.pIcms+v.pPis+v.pCofins,soma=imp+v.pDesp+v.pMargem,out=$("pOut"),bar=$("pBar"),leg=$("pLeg");
+  if(soma>=100){
+    out.innerHTML='<div><span>Resultado</span><b class="down">Inviável</b></div><p class="note" style="max-width:32ch">Impostos, despesas e margem somam '+pct(soma)+' do preço. Reduza algum percentual.</p>';
+    bar.innerHTML="";leg.innerHTML="";return;
+  }
+  const preco=v.pCusto/(1-soma/100),mk=v.pCusto>0?preco/v.pCusto:0;
+  out.innerHTML='<div><span>Preço de venda sugerido</span><b class="num">'+brl2(preco)+'</b></div>'+
+    '<div><span>Markup multiplicador</span><b class="num sm">'+mk.toLocaleString("pt-BR",{minimumFractionDigits:3,maximumFractionDigits:3})+'</b></div>'+
+    '<div><span>Margem por unidade</span><b class="num sm">'+brl2(preco*v.pMargem/100)+'</b></div>';
+  if(preco<=0){bar.innerHTML="";leg.innerHTML="";return}
+  const partes=[["Custo",v.pCusto,css("--ink-2")],["Impostos",preco*imp/100,css("--bad")],["Despesas e folha",preco*v.pDesp/100,css("--s3")],["Margem",preco*v.pMargem/100,css("--accent")]];
+  bar.innerHTML=partes.map(p=>'<div style="flex:'+p[1]+';background:'+p[2]+'" title="'+p[0]+'"></div>').join("");
+  leg.innerHTML=partes.map(p=>'<span><i style="background:'+p[2]+'"></i>'+p[0]+' '+brl2(p[1])+' · '+pct(p[1]/preco*100)+'</span>').join("");
+}
+pIds.forEach(id=>$(id).addEventListener("input",renderPreco));
+
+/* =====================================================================
+   CONTATO
+   Seção sempre visível. Botões só aparecem para campos preenchidos.
+   (Configure LinkedIn, e-mail, telefone e currículo em CONFIGURAÇÕES antes da publicação.)
+   ===================================================================== */
+(function(){
+  const box=$("contactBox");let h="";
+  if(CONTATO.linkedin)h+='<a class="btn primary" href="'+CONTATO.linkedin+'" target="_blank" rel="noopener">LinkedIn ↗</a>';
+  if(CONTATO.email)h+='<span class="addr" id="mailAddr">'+CONTATO.email+'</span><button class="btn" type="button" id="copyMail">Copiar e-mail</button>';
+  if(CONTATO.telefone){
+    const dig=CONTATO.telefone.replace(/\D/g,""),intl=dig.startsWith("55")?dig:"55"+dig;
+    h+='<span class="addr" id="telAddr">'+CONTATO.telefone+'</span><button class="btn" type="button" id="copyTel">Copiar telefone</button>'+
+       '<a class="btn" href="https://wa.me/'+intl+'" target="_blank" rel="noopener">WhatsApp ↗</a>';
+  }
+  if(CONTATO.curriculo){
+    h+='<a class="btn" href="'+CONTATO.curriculo+'" target="_blank" rel="noopener">Baixar currículo</a>';
+    const hb=$("btnCvHero");hb.href=CONTATO.curriculo;hb.hidden=false;
+  }
+  box.innerHTML=h;
+  function copiar(btnId,alvoId,texto,ok){
+    const b=$(btnId);if(!b)return;
+    b.onclick=()=>{
+      const sel=()=>{const r=document.createRange();r.selectNodeContents($(alvoId));const s=getSelection();s.removeAllRanges();s.addRange(r)};
+      try{navigator.clipboard.writeText(texto).then(()=>{b.textContent=ok},sel)}catch(e){sel()}
+    };
+  }
+  copiar("copyMail","mailAddr",CONTATO.email,"E-mail copiado");
+  copiar("copyTel","telAddr",CONTATO.telefone,"Telefone copiado");
+})();
+
+/* =====================================================================
+   TEMA (claro/escuro)
+   Padrão: segue o sistema do visitante. O botão alterna e lembra a escolha.
+   ===================================================================== */
+(function(){
+  const root=document.documentElement,btn=$("themeBtn");
+  try{const t=localStorage.getItem("tema");if(t==="dark"||t==="light")root.setAttribute("data-theme",t)}catch(e){}
+  btn.onclick=()=>{
+    const atual=root.getAttribute("data-theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+    const novo=atual==="dark"?"light":"dark";
+    root.setAttribute("data-theme",novo);
+    try{localStorage.setItem("tema",novo)}catch(e){}
+  };
+})();
+
+/* =====================================================================
+   INICIALIZAÇÃO
+   ===================================================================== */
+function renderAll(){renderDRE();renderCP(cpAtual);renderTorre();renderPreco()}
+if(window.Chart){Chart.defaults.font.family="IBM Plex Sans";renderAll()}else{renderPreco()}
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>window.Chart&&renderAll());
+new MutationObserver(()=>window.Chart&&renderAll()).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+</script>
+
+</body>
+</html>
