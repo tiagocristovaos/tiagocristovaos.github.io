@@ -10,7 +10,7 @@
 <meta property="og:url" content="https://tiagocristovaos.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tiago Cristovão da Silva · Controladoria, FP&A & Dados">
-<meta property="og:description" content="Portfólio com cases interativos de DRE gerencial, contas a pagar, torre de controle e formação de preço.">
+<meta property="og:description" content="Portfólio com cases interativos de DRE gerencial, contas a pagar, torre de controle, formação de preço e custo da transição da jornada.">
 <meta property="og:image" content="https://tiagocristovaos.github.io/og-image.jpg">
 <meta property="og:image:width" content="1600">
 <meta property="og:image:height" content="838">
@@ -310,7 +310,7 @@ footer{border-top:1px solid var(--rule);padding-block:28px 48px;color:var(--mute
       <div role="listitem"><b>Multiempresa</b><span>Escopo de atuação</span></div>
       <div role="listitem"><b>Operação + Financeiro + Dados</b><span>Áreas integradas</span></div>
       <div role="listitem"><b>Excel · CSV · PDF</b><span>Fontes de ERPs e bases operacionais</span></div>
-      <div role="listitem"><b>4</b><span>Soluções demonstradas</span></div>
+      <div role="listitem"><b>5</b><span>Soluções demonstradas</span></div>
     </div>
   </div>
 
@@ -335,7 +335,7 @@ footer{border-top:1px solid var(--rule);padding-block:28px 48px;color:var(--mute
       <div class="sec-head">
         <span class="code">3.0</span>
         <div><h2>Cases com demonstração</h2></div>
-        <p>Quatro soluções gerenciais que construí e mantenho. As demonstrações reproduzem a lógica dos originais com uma empresa fictícia: todos os números são simulados e nenhum dado real do empregador é utilizado.</p>
+        <p>Cinco soluções gerenciais: quatro que construí e mantenho e um simulador de cenários. As demonstrações reproduzem a lógica dos originais com uma empresa fictícia: todos os números são simulados e nenhum dado real do empregador é utilizado.</p>
       </div>
 
       <!-- CASE 1 · SIG -->
@@ -456,6 +456,41 @@ footer{border-top:1px solid var(--rule);padding-block:28px 48px;color:var(--mute
             <div class="stackbar" id="pBar" aria-hidden="true"></div>
             <div class="legend" id="pLeg"></div>
             <p class="note">Preço = custo ÷ (1 − impostos − despesas − margem). Modelo gerencial simplificado para demonstração. Não considera créditos tributários de entrada, particularidades fiscais por NCM, regimes especiais ou demais variáveis de uma apuração fiscal completa.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- CASE 5 · CUSTO DA TRANSIÇÃO DA JORNADA -->
+      <article class="case" id="transicao">
+        <div>
+          <span class="tag">3.5 · Custo da transição da jornada</span>
+          <h3>Quanto custa manter a mesma operação com menos horas</h3>
+          <dl class="facts">
+            <div><dt>Problema</dt><dd>A Emenda Constitucional 141/2026 reduz o limite semanal de 44h para 42h (a partir de 16/12/2026) e depois para 40h (a partir de 16/12/2027), sem redução de salário. A pergunta de gestão é objetiva: se o volume de trabalho for o mesmo, quanto custa cobrir as horas que saem da escala?</dd></div>
+            <div><dt>Solução</dt><dd>Simulador que parte do quadro, do custo mensal por pessoa e da jornada atual e compara três caminhos: contratar, cobrir com hora extra e um mix dos dois. As premissas ficam à mostra e podem ser alteradas, inclusive o quanto da diferença é absorvido por produtividade e reorganização de turnos.</dd></div>
+            <div class="impact"><dt>O que a demonstração mostra</dt><dd>Com os valores de exemplo (100 pessoas, R$ 4.500,00 por pessoa, jornada de 44h), o custo da hora trabalhada sobe 4,8% na etapa de 42h e 10,0% na de 40h. Cobrir a diferença com hora extra custa pelo menos 50% mais que contratar.</dd></div>
+            <div><dt>Decisão suportada</dt><dd>Estimar um teto de custo por cenário antes do orçamento, separar o que é conta do que é premissa e discutir com RH, jurídico e sindicato a partir de números e não de percepção.</dd></div>
+          </dl>
+          <div class="chips"><span class="chip">FP&amp;A</span><span class="chip">Custo de pessoal</span><span class="chip">Cenários</span><span class="chip">JavaScript</span></div>
+        </div>
+        <div class="demo">
+          <div class="demo-bar"><span class="demo-title">Simulador de custo da transição de jornada</span><span class="fict">Valores de exemplo</span></div>
+          <div class="demo-body">
+            <div class="calc">
+              <label for="tQuadro">Quadro atual (pessoas)<input id="tQuadro" type="number" step="1" min="1" value="100" inputmode="numeric"></label>
+              <label for="tCusto">Custo mensal por pessoa (R$)<input id="tCusto" type="number" step="0.01" min="0" value="4500.00" inputmode="decimal"></label>
+              <label for="tH0">Jornada atual (h/semana)<input id="tH0" type="number" step="1" min="1" max="60" value="44" inputmode="numeric"></label>
+              <label for="tAbs">Horas absorvidas sem custo (%)<input id="tAbs" type="number" step="1" min="0" max="100" value="0" inputmode="numeric"></label>
+              <label for="tAdic">Adicional de hora extra (%)<input id="tAdic" type="number" step="1" min="50" value="50" inputmode="numeric"></label>
+              <label for="tMix">Parte via hora extra no mix (%)<input id="tMix" type="number" step="5" min="0" max="100" value="30" inputmode="numeric"></label>
+            </div>
+            <div class="controls">
+              <label id="tEtapaLbl">Etapa</label>
+              <div class="seg" id="tEtapa" role="group" aria-labelledby="tEtapaLbl"></div>
+            </div>
+            <div class="kpis" id="tKpis" aria-live="polite"></div>
+            <div class="chart"><canvas id="chTrans" role="img" aria-label="Custo adicional mensal por caminho (contratar, hora extra e mix) nas etapas de 42 e 40 horas"></canvas></div>
+            <p class="note">Conta: horas a cobrir por semana = quadro × (jornada atual − nova jornada), menos as horas absorvidas. Contratar = horas a cobrir ÷ nova jornada × custo por pessoa. Hora extra = valor da hora × (1 + adicional); o mínimo constitucional é 50% (art. 7º, XVI). Premissas simplificadas: o custo por pessoa já inclui encargos, o salário não muda e não há limite de horas extras por dia. Não considera quem já trabalha 40h ou menos (art. 4º), cargos com controle de jornada dispensado (art. 8º) nem acordos coletivos. Simulação ilustrativa, não é parecer jurídico. Fonte: texto da EC 141/2026, planalto.gov.br.</p>
           </div>
         </div>
       </article>
@@ -754,6 +789,50 @@ function renderPreco(){
 pIds.forEach(id=>$(id).addEventListener("input",renderPreco));
 
 /* =====================================================================
+   CUSTO DA TRANSIÇÃO DA JORNADA (EC 141/2026)
+   Etapas: 42h a partir de 16/12/2026; 40h a partir de 16/12/2027.
+   horas a cobrir/semana = quadro × (jornada atual − nova jornada) × (1 − absorvido)
+   contratar  = horas a cobrir ÷ nova jornada × custo por pessoa
+   hora extra = contratar × (1 + adicional)   (hora = custo ÷ (nova jornada × 52/12))
+   mix        = hora extra × parte% + contratar × (1 − parte%)
+   ===================================================================== */
+const tIds=["tQuadro","tCusto","tH0","tAbs","tAdic","tMix"];
+const ETAPAS={"42h · a partir de 16/12/2026":42,"40h · a partir de 16/12/2027":40};
+let tEtapa="42h · a partir de 16/12/2026";
+function tNum(id,min,max){let v=parseFloat(String($(id).value).replace(",","."));if(!isFinite(v))v=0;if(min!==undefined)v=Math.max(min,v);if(max!==undefined)v=Math.min(max,v);return v}
+function calcTrans(h1){
+  const Q=tNum("tQuadro",1),C=tNum("tCusto",0),H0=tNum("tH0",1,60),abs=tNum("tAbs",0,100)/100,adic=tNum("tAdic",0)/100,mix=tNum("tMix",0,100)/100;
+  const gap=Math.max(0,H0-h1)*Q,horas=gap*(1-abs),pessoas=horas/h1,contratar=pessoas*C,extra=contratar*(1+adic),mx=extra*mix+contratar*(1-mix);
+  return {Q,C,H0,gap,horas,pessoas,contratar,extra,mx,folha:Q*C};
+}
+function renderTransicao(){
+  const h1=ETAPAS[tEtapa],r=calcTrans(h1),k=$("tKpis");
+  if(r.H0<=h1){
+    k.innerHTML='<p class="note">A jornada atual ('+r.H0+'h) já é igual ou menor que '+h1+'h. Nesse caso não há redução a cobrir (art. 4º da Emenda).</p>';
+  }else{
+    const pf=v=>r.folha>0?pct(v/r.folha*100):"—";
+    k.innerHTML=
+      '<div class="kpi"><span>Variação do custo da hora</span><b>+'+pct((r.H0/h1-1)*100)+'</b><i class="neu">salário constante</i></div>'+
+      '<div class="kpi"><span>Horas a cobrir por semana</span><b>'+r.horas.toLocaleString("pt-BR",{maximumFractionDigits:0})+'</b><i class="neu">de '+r.gap.toLocaleString("pt-BR",{maximumFractionDigits:0})+' h sem absorção</i></div>'+
+      '<div class="kpi"><span>Pessoas a mais (contratar)</span><b>'+r.pessoas.toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1})+'</b><i class="neu">de '+r.Q.toLocaleString("pt-BR")+' hoje</i></div>'+
+      '<div class="kpi"><span>Contratar · por mês</span><b>'+brl(r.contratar)+'</b><i class="neu">'+pf(r.contratar)+' da folha</i></div>'+
+      '<div class="kpi"><span>Hora extra · por mês</span><b>'+brl(r.extra)+'</b><i class="neu">'+pf(r.extra)+' da folha</i></div>'+
+      '<div class="kpi"><span>Mix · por mês</span><b>'+brl(r.mx)+'</b><i class="neu">'+pf(r.mx)+' da folha</i></div>';
+  }
+  if(!window.Chart)return;
+  const r42=calcTrans(42),r40=calcTrans(40),o=baseOpts();
+  o.plugins.legend=legendaTopo();
+  o.scales.y.ticks.callback=v=>mil(v);
+  o.plugins.tooltip.callbacks={label:c=>c.dataset.label+": "+brl(c.parsed.y)};
+  if(charts.tr)charts.tr.destroy();
+  charts.tr=new Chart($("chTrans"),{type:"bar",data:{labels:["Contratar","Hora extra","Mix"],datasets:[
+    {label:"Etapa de 42h",data:[r42.contratar,r42.extra,r42.mx].map(v=>r42.H0>42?v:0),backgroundColor:css("--accent"),borderRadius:3,maxBarThickness:44},
+    {label:"Etapa de 40h",data:[r40.contratar,r40.extra,r40.mx].map(v=>r40.H0>40?v:0),backgroundColor:css("--s3"),borderRadius:3,maxBarThickness:44}]},options:o});
+}
+segGroup($("tEtapa"),Object.keys(ETAPAS),e=>{tEtapa=e;renderTransicao()},tEtapa);
+tIds.forEach(id=>$(id).addEventListener("input",renderTransicao));
+
+/* =====================================================================
    CONTATO
    Seção sempre visível. Botões só aparecem para campos preenchidos.
    (Configure LinkedIn, e-mail, telefone e currículo em CONFIGURAÇÕES antes da publicação.)
@@ -801,8 +880,8 @@ pIds.forEach(id=>$(id).addEventListener("input",renderPreco));
 /* =====================================================================
    INICIALIZAÇÃO
    ===================================================================== */
-function renderAll(){renderDRE();renderCP(cpAtual);renderTorre();renderPreco()}
-if(window.Chart){Chart.defaults.font.family="IBM Plex Sans";renderAll()}else{renderPreco()}
+function renderAll(){renderDRE();renderCP(cpAtual);renderTorre();renderPreco();renderTransicao()}
+if(window.Chart){Chart.defaults.font.family="IBM Plex Sans";renderAll()}else{renderPreco();renderTransicao()}
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>window.Chart&&renderAll());
 new MutationObserver(()=>window.Chart&&renderAll()).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 </script>
